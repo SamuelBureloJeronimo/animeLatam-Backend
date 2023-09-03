@@ -1,0 +1,41 @@
+{
+    "user": {
+        "_id": "ObjectId",
+        "email": "String",
+        "nick": "String",
+        "image": "String"
+    },
+    "genre": {
+        "_id": "ObjectId",
+        "name": "String"
+    },
+    "anime": {
+        "_id": "ObjectId",
+        "name": "String",
+        "coverImage": "String",
+        "displayImage": "String",
+        "launchDate": "DataTime",
+        "genres":
+            {
+                "_id": {"type": "ObjectId", "ref": "genre"}
+            },
+        "rating": "Decimal",
+        "linksToChapters": [
+            {
+                "chapter": "Number",
+                "name": "String",
+                "link": "String"
+            }
+        ],
+        "comments": [
+            {
+                "_id": {
+                    "type": "ObjectId",
+                    "ref": "user"
+                },
+                "publicationDate": "DataTime",
+                "comment": "String"
+            }
+        ]
+    }
+}

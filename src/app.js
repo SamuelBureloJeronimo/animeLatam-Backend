@@ -2,7 +2,7 @@ import express from 'express';
 import morgan from 'morgan';
 import routerMain from './routes/main.routes.js';
 import routerUser from './routes/user.routes.js';
-
+import routerGenre from './routes/genre.routes.js';
 export const app = express();
 export const port = process.env.PORT || 3000;
 
@@ -14,7 +14,8 @@ app.use(morgan('dev'));
 app.use(express.json());
 // Routes
 app.use('/api', routerMain);
-app.use('/api' ,routerUser);
+app.use('/api', routerUser);
+app.use('/api', routerGenre);
 
 // Cors
 app.use((req, res, next) => {
