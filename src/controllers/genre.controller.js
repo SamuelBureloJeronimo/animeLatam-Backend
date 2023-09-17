@@ -12,7 +12,7 @@ const saveGenre = async(req, res) => {
 
         await genre.save();
 
-        res.status(200).json({ msg: 'Genre Saved', genre });
+        res.status(200).json({ msg: 'Genre saved', genre });
 
     } catch (error) {
         console.error(error);
