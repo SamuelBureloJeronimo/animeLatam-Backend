@@ -98,7 +98,7 @@ const deleteGenre = async (req, res) => {
         res.status(200).json({ msg: 'Genre eliminated', deleted_genre: deletedGenre });
     } catch (error) {
         console.error(error);
-        res.status(500).json({ error: 'There was a server error'});
+        res.status(500).json({ error: 'There was a server error' });
     }
 }
 
