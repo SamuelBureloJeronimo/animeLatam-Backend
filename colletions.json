@@ -15,10 +15,11 @@
         "coverImage": "String",
         "displayImage": "String",
         "launchDate": "DataTime",
-        "genres":
+        "genres":[
             {
                 "_id": {"type": "ObjectId", "ref": "genre"}
-            },
+            }
+        ],
         "rating": "Decimal",
         "linksToChapters": [
             {
@@ -29,7 +30,8 @@
         ],
         "comments": [
             {
-                "_id": {
+                "_id":
+                {
                     "type": "ObjectId",
                     "ref": "user"
                 },

@@ -3,6 +3,11 @@ import Genre from "../schemas/genre.schema.js";
 const saveGenre = async(req, res) => {
     try {
         const { name } = req.body;
+
+        if (!name) {
+            return res.status(400).json({ error: 'Name is required in the request body' });
+        }
+
         const existingGenre = await Genre.findOne({ name });
         if(existingGenre){
             return res.status(400).json({ msg: "Name is already in use"});

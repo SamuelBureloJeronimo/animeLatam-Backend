@@ -9,20 +9,24 @@ const animeSchema = new mongoose.Schema({
         type : mongoose.ObjectId,
         ref : 'Genre'
     }],
-    rating : { type: String },
-    linktoAnimes : [{
+    rating : { type: Decimal },
+    linkToChapters : [
+        {
         chapter : { type: Number },
         name : { type: String  },
         link : { type: String }
-    }],
-    comments : [{
+        }
+    ],
+    comments : [
+        {
         user : {
             type : mongoose.ObjectId,
             ref : 'User'
         },
         publicationDate : { type: Date, default : Date.now },
         comment : { type: String }
-    }]
+        }
+    ]
 });
 
-module.exports = mongoose.model('User', userSchema);
+export default mongoose.model('Anime', animeSchema);
